@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.xscoder.pikky">
+
+    <!-- permissions -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-feature android:name="android.hardware.location.gps"/>
+
+
+    <!-- For Push Notifications -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+
+    <!-- IMPORTANT: REPLACE "com.xscoder.pikky" WITH YOUR OWN PACKAGE NAME -->
+    <permission
+        android:name="com.xscoder.pikky.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.xscoder.pikky.permission.C2D_MESSAGE"/>
+
+
+    <application
+        android:name=".Configurations"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
+        <!-- Splash screen -->
+        <activity
+            android:name=".Splash.SplashScreen"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splashscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+        <!-- IMPORTANT: Replace "191162618244" with your own GCM Sender Id. -->
+        <meta-data
+            android:name="com.parse.push.gcm_sender_id"
+            android:value="id:191162618244"/>
+
+        <service
+            android:name="com.parse.fcm.ParseFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver
+            android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+
+
+
+        <!-- File provider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <!-- For Facebook SDK -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+<!--        &lt;!&ndash; AdMob CLosed Ads by Mehraj;-->
+<!--        <meta-data-->
+<!--            android:name="com.google.android.gms.ads.APPLICATION_ID"-->
+<!--            android:value="@string/ADMOB_APP_ID"/>-->
+
+        <!-- Other Activities -->
+        <activity android:name=".Home.Home" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".loginSignUp.Login"/>
+        <activity android:name=".loginSignUp.SignUp"/>
+        <activity android:name=".setting.TermsOfUse"/>
+        <activity android:name=".loginSignUp.Intro"/>
+        <activity android:name=".Share.ShareScreen"/>
+        <activity android:name=".Camera.SquareCamera"/>
+        <activity android:name=".Edit.EditImage"/>
+        <activity android:name=".Edit.EditVideo"/>
+        <activity android:name=".Userprofile.Account"/>
+        <activity android:name=".Search.SearchScreen"/>
+        <activity android:name=".Userprofile.UserProfile"/>
+        <activity android:name=".comments.Comments"/>
+        <activity android:name=".WatchVideo"/>
+        <activity android:name=".InterestingPeople"/>
+        <activity android:name=".Massiging.Follow"/>
+        <activity android:name=".posts.PostDetails"/>
+        <activity android:name=".Massiging.Notifications"/>
+        <activity android:name=".setting.Settings"/>
+        <activity android:name=".Userprofile.EditProfile"/>
+        <activity android:name=".Instants"/>
+        <activity android:name=".Massiging.Messages"/>
+        <activity android:name=".Massiging.NewMessage"/>
+    </application>
+
+</manifest>

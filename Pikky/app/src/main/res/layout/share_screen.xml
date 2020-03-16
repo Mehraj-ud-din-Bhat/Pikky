@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Share.ShareScreen">
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/hTitleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Share..."
+            android:textColor="#000"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/ssBackButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/dismiss_butt_black"/>
+
+        <Button
+            android:id="@+id/ssShareButt"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:text="Share"
+            android:textAllCaps="false"
+            android:textColor="@color/main_color"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ssImageToShare"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topBar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/logo"/>
+
+    <EditText
+        android:id="@+id/ssPostTextTxt"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/ssImageToShare"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@+id/ssImageToShare"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:maxLength="300"
+        android:textSize="10sp"/>
+
+
+    <LinearLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ssCharactersCountTxt"
+        android:layout_marginTop="20dp"
+        android:background="#999"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ssTagsTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/line"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:hint="Add tags separated by space - ex: #life #art #nice"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:singleLine="true"
+        android:textColor="#333"
+        android:textSize="11sp"
+        android:textStyle="bold|italic"/>
+
+    <LinearLayout
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ssTagsTxt"
+        android:layout_marginTop="10dp"
+        android:background="#999"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ssCurrentLocationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ssImageToShare"
+        android:layout_alignTop="@+id/line2"
+        android:layout_below="@+id/line2"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:text="Add your current location"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="12sp"/>
+
+    <Button
+        android:id="@+id/ssRemoveCurrentLocationButt"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/line2"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/dismiss_butt_black"/>
+
+    <TextView
+        android:id="@+id/ssCharactersCountTxt"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="180dp"
+        android:text="300"
+        android:textAlignment="textEnd"
+        android:textSize="10sp"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+     <de.hdodenhof.circleimageview.CircleImageView
+         android:id="@+id/ccommAvatarImg"
+         android:layout_width="48dp"
+         android:layout_height="48dp"
+         android:layout_marginLeft="10dp"
+         android:layout_marginTop="10dp"
+         android:src="@drawable/default_avatar"/>
+
+     <TextView
+         android:id="@+id/ccommUsernameTxt"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignTop="@+id/ccommAvatarImg"
+         android:layout_marginRight="100dp"
+         android:layout_toEndOf="@+id/ccommAvatarImg"
+         android:text="•••"
+         android:textColor="#333"
+         android:textSize="12sp"
+         android:textStyle="bold"/>
+
+     <TextView
+         android:id="@+id/ccommDateTxt"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentEnd="true"
+         android:layout_alignTop="@+id/ccommAvatarImg"
+         android:layout_marginRight="10dp"
+         android:text="•••"
+         android:textAlignment="textEnd"
+         android:textSize="11sp"/>
+
+     <TextView
+         android:id="@+id/ccommCommentTxt"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/ccommUsernameTxt"
+         android:layout_marginRight="10dp"
+         android:layout_marginTop="5dp"
+         android:layout_toEndOf="@+id/ccommAvatarImg"
+         android:text="••••••"
+         android:textColor="#333"
+         android:textSize="11sp"/>
+
+     <Button
+         android:id="@+id/ccommLikeButt"
+         android:layout_width="28dp"
+         android:layout_height="28dp"
+         android:layout_below="@+id/ccommCommentTxt"
+         android:layout_marginTop="10dp"
+         android:layout_toEndOf="@+id/ccommAvatarImg"
+         android:background="@drawable/like_butt"/>
+
+     <TextView
+         android:id="@+id/ccommLikesTxt"
+         android:layout_width="wrap_content"
+         android:layout_height="28dp"
+         android:layout_below="@+id/ccommCommentTxt"
+         android:layout_marginTop="10dp"
+         android:layout_toEndOf="@+id/ccommLikeButt"
+         android:gravity="center_vertical"
+         android:text="0"
+         android:textColor="#333"
+         android:textSize="10sp"/>
+
+     <Button
+         android:id="@+id/ccommReportButt"
+         android:layout_width="28dp"
+         android:layout_height="28dp"
+         android:layout_alignParentEnd="true"
+         android:layout_below="@+id/ccommCommentTxt"
+         android:layout_marginRight="10dp"
+         android:layout_marginTop="10dp"
+         android:background="@drawable/report_butt"/>
+
+     <ImageView
+         android:id="@+id/ccommVerifiedBadge"
+         android:layout_width="20dp"
+         android:layout_height="20dp"
+         android:layout_alignBottom="@+id/ccommAvatarImg"
+         android:layout_alignEnd="@+id/ccommAvatarImg"
+         android:visibility="invisible"
+         app:srcCompat="@drawable/verified_badge"/>
+
+</RelativeLayout>

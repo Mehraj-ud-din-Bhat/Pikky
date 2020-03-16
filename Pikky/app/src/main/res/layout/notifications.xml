@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".Massiging.Notifications">
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/notTitleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Notifications"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="#999"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/notBackButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back_butt"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/tabBar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/tab_one"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/tab_home"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textSize="8dp"/>
+
+        <Button
+            android:id="@+id/tab_two"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/tab_search"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp"/>
+
+        <Button
+            android:id="@+id/tab_three"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/tab_camera"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp"/>
+
+        <Button
+            android:id="@+id/tab_four"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/tab_notifications_active"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp"/>
+
+        <Button
+            android:id="@+id/tab_five"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/tab_account"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp"/>
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/notNotificationsListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tabBar"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topBar"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"/>
+</RelativeLayout>

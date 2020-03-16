@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusableInTouchMode="true">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cpAvatarImg"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/default_avatar"/>
+
+    <ImageView
+        android:id="@+id/cpVerifiedBadge"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignBottom="@+id/cpAvatarImg"
+        android:layout_alignEnd="@+id/cpAvatarImg"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/verified_badge"/>
+
+    <TextView
+        android:id="@+id/cpUsernameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/cpAvatarImg"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="60dp"
+        android:layout_toEndOf="@+id/cpAvatarImg"
+        android:text="•••"
+        android:textColor="#333"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/cpLocationTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cpAvatarImg"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="60dp"
+        android:layout_toEndOf="@+id/cpAvatarImg"
+        android:text="•••"
+        android:textColor="#555"
+        android:textSize="10sp"/>
+
+    <Button
+        android:id="@+id/cpOptionsButt"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:text="•••"
+        android:textColor="#333"/>
+
+    <ImageView
+        android:id="@+id/cpPostImg"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cpAvatarImg"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        />
+
+    <Button
+        android:id="@+id/cpLikeButt"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cpPostImg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/like_butt"/>
+
+    <TextView
+        android:id="@+id/cpLikesTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_alignTop="@+id/cpLikeButt"
+        android:layout_toEndOf="@+id/cpAvatarImg"
+        android:gravity="center_vertical"
+        android:text="0"
+        android:textAlignment="textStart"
+        android:textColor="#333"
+        android:textSize="11sp"/>
+
+    <Button
+        android:id="@+id/cpCommentButt"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignStart="@+id/cpUsernameTxt"
+        android:layout_alignTop="@+id/cpLikeButt"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/comments_butt"/>
+
+    <TextView
+        android:id="@+id/cpCommentsTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_alignTop="@+id/cpLikeButt"
+        android:layout_toEndOf="@+id/cpCommentButt"
+        android:gravity="center_vertical"
+        android:text="0"
+        android:textColor="#333"
+        android:textSize="11sp"/>
+
+    <Button
+        android:id="@+id/cpBookmarkButt"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/cpPostImg"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bookmark_butt"/>
+
+    <TextView
+        android:id="@+id/cpPostTextTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cpDateTxt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="•••••••••"
+        android:textColor="#333"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/cpDateTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/cpAvatarImg"
+        android:layout_below="@+id/cpLikeButt"
+        android:text="•••"
+        android:textSize="10sp"/>
+
+    <Button
+        android:id="@+id/cpPlayVideoButt"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/play_butt"
+        android:visibility="invisible"/>
+
+    <HorizontalScrollView
+        android:id="@+id/cpTagsScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/cpPostTextTxt"
+        android:layout_alignStart="@+id/cpAvatarImg"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:scrollbarSize="1dp">
+
+        <LinearLayout
+            android:id="@+id/cpTagsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"/>
+    </HorizontalScrollView>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cpYourAvatarImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/cpAvatarImg"
+        android:layout_below="@+id/cpTagsScrollView"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/default_avatar"/>
+
+    <EditText
+        android:id="@+id/cpAddCommentTxt"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/cpYourAvatarImg"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@+id/cpYourAvatarImg"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:focusableInTouchMode="true"
+        android:hint="Add a comment"
+        android:imeOptions="actionSend"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:singleLine="true"
+        android:textSize="11sp"/>
+
+</RelativeLayout>

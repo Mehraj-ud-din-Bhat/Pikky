@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333"
+    tools:context=".WatchVideo">
+
+
+    <com.xscoder.pikky.Edit.TextureVideoView
+        android:id="@+id/wvVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/wvAvatarImg"
+        android:layout_marginBottom="55dp"
+        android:layout_marginTop="10dp"/>
+
+    <ProgressBar
+        android:id="@+id/wvVideoProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:progress="10"
+        android:progressTint="@color/main_color"
+        android:secondaryProgressTint="@color/light_grey"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/wvAvatarImg"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignStart="@+id/wvVideoProgressBar"
+        android:layout_below="@+id/wvVideoProgressBar"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/default_avatar"/>
+
+    <TextView
+        android:id="@+id/wvIUsernameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/wvAvatarImg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="60dp"
+        android:layout_toEndOf="@+id/wvAvatarImg"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="••••••"
+        android:textColor="#fff"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/wvDismissButt"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignEnd="@+id/wvVideoProgressBar"
+        android:layout_below="@+id/wvVideoProgressBar"
+        android:background="@drawable/dismiss_butt"/>
+
+    <Button
+        android:id="@+id/wvOptionsButt"
+        android:layout_width="60dp"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/transparent"
+        android:text="•••"
+        android:textColor="#fff"
+        android:textSize="16sp"/>
+
+    <ProgressBar
+        android:id="@+id/videoLoadingProg"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:indeterminateTint="#fff"/>
+
+</RelativeLayout>

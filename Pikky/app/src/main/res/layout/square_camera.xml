@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    android:background="#fff"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/sqcTopView"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/sqcTitleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Photo"
+            android:textColor="#333"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/sqcBackButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back_butt"/>
+    </RelativeLayout>
+
+
+    <com.xscoder.pikky.Edit.AutoFitTextureView
+        android:id="@+id/texture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sqcToolsView"
+        android:layout_below="@+id/sqcTopView"
+        >
+    </com.xscoder.pikky.Edit.AutoFitTextureView>
+
+
+    <RelativeLayout
+        android:id="@+id/sqcToolsView"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#fff">
+
+        <Button
+            android:id="@+id/sqcTakePicVideoButt"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/snap_photo_butt"
+            />
+
+        <Button
+            android:id="@+id/sqcSwitchCameraButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignTop="@+id/sqcTakePicVideoButt"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/sqcTakePicVideoButt"
+            android:background="@drawable/switch_camera_butt"/>
+
+        <Button
+            android:id="@+id/sqcFlashButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignTop="@+id/sqcTakePicVideoButt"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@+id/sqcTakePicVideoButt"
+            android:background="@drawable/flash_off"/>
+
+        <Button
+            android:id="@+id/sqcGalleryButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:alpha="0.5"
+            android:background="@drawable/gallery_butt"/>
+
+        <Button
+            android:id="@+id/sqcPhotoCameraButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/camera_butt"
+            />
+
+        <Button
+            android:id="@+id/sqcVideoCameraButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:alpha="0.5"
+            android:background="@drawable/video_butt"/>
+
+        <TextView
+            android:id="@+id/sqcRecordingTimeTxt"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

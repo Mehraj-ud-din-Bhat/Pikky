@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".Userprofile.Account">
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/accTitleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Account"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="#999"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/accSettingsButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/settings_butt"/>
+
+        <Button
+            android:id="@+id/accBackButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back_butt"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/accAvatarImg"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topBar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/default_avatar"/>
+
+    <TextView
+        android:id="@+id/accFullNameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/accAvatarImg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@+id/accAvatarImg"
+        android:text="•••"
+        android:textColor="#333"/>
+
+    <TextView
+        android:id="@+id/accUsernameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/accFullNameTxt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@+id/accAvatarImg"
+        android:text="•••"
+        android:textSize="11sp"/>
+
+    <RelativeLayout
+        android:id="@+id/accInfoLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/accWebsiteButt"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/accPostsCountTxt"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#333"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accPostsCountTxt"
+            android:layout_marginBottom="10dp"
+            android:text="POSTS"
+            android:textAlignment="center"
+            android:textSize="11sp"/>
+
+        <LinearLayout
+            android:id="@+id/accline2"
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/accPostsCountTxt"
+            android:background="#999"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/accFollowersCountTxt"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/accPostsCountTxt"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#333"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accPostsCountTxt"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/accPostsCountTxt"
+            android:text="FOLLOWERS"
+            android:textAlignment="center"
+            android:textSize="11sp"/>
+
+        <Button
+            android:id="@+id/accFollowersButt"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            />
+
+        <LinearLayout
+            android:id="@+id/accline3"
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/accFollowersCountTxt"
+            android:background="#999"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/accFollowingCountTxt"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/accFollowersCountTxt"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#333"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accPostsCountTxt"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/accFollowersCountTxt"
+            android:text="FOLLOWING"
+            android:textAlignment="center"
+            android:textSize="11sp"/>
+
+        <Button
+            android:id="@+id/accFollowingButt"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/accFollowingCountTxt"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/accLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/accInfoLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#999"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refreshControl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tabBar"
+        android:layout_below="@+id/accInfoLayout"
+        android:layout_marginTop="10dp">
+
+        <GridView
+            android:id="@+id/accPostsGridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/accBioTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/accUsernameTxt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/accAvatarImg"
+        android:maxLines="2"
+        android:textSize="10sp"/>
+
+    <Button
+        android:id="@+id/accWebsiteButt"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@+id/accBioTxt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@+id/accAvatarImg"
+        android:background="@android:color/transparent"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/main_color"
+        android:textSize="10sp"/>
+
+    <ImageView
+        android:id="@+id/accVerifiedBadge"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/accAvatarImg"
+        android:layout_alignEnd="@+id/accAvatarImg"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/verified_badge"/>
+
+
+    <LinearLayout
+        android:id="@+id/tabBar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/tab_one"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/tab_home"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textSize="8dp"/>
+
+        <Button
+            android:id="@+id/tab_two"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/tab_search"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp"/>
+
+        <Button
+            android:id="@+id/tab_three"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/tab_camera"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp"/>
+
+        <Button
+            android:id="@+id/tab_four"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/tab_notifications"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp"/>
+
+        <Button
+            android:id="@+id/tab_five"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/tab_account_active"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:focusableInTouchMode="true"
+    tools:context=".Userprofile.EditProfile">
+
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/hTitleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Edit Profile"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="#cccccc"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/epBackButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back_butt"/>
+
+        <Button
+            android:id="@+id/epUpdateButt"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:text="@string/common_google_play_services_update_button"
+            android:textAllCaps="false"
+            android:textSize="11sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/epAvatarBkg"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/light_grey">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/epAvatarimg"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/default_avatar"/>
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/epAvatarimg"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="Change Profile Picture"
+                        android:textAlignment="center"
+                        android:textColor="@color/main_color"
+                        android:textSize="9sp"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="60dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/epAvatarBkg"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:text="Name"
+                    android:textColor="#333"
+                    android:textSize="12sp"/>
+
+                <EditText
+                    android:id="@+id/epFullnameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_alignTop="@+id/textView9"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toEndOf="@+id/textView9"
+                    android:backgroundTint="@color/grey"
+                    android:ems="10"
+                    android:hint="Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#333"
+                    android:textCursorDrawable="@drawable/black_cursor"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="60dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView9"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:text="Username"
+                    android:textColor="#333"
+                    android:textSize="12sp"/>
+
+                <EditText
+                    android:id="@+id/epUsernameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_alignTop="@+id/textView10"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toEndOf="@+id/textView10"
+                    android:backgroundTint="@color/grey"
+                    android:ems="10"
+                    android:hint="Username"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#333"
+                    android:textCursorDrawable="@drawable/black_cursor"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView9"
+                    android:layout_below="@+id/textView10"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="If you'll change your username, you will need to use the new username to login again."
+                    android:textSize="9sp"/>
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="60dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView11"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:text="Website"
+                    android:textColor="#333"
+                    android:textSize="12sp"/>
+
+                <EditText
+                    android:id="@+id/epWebsiteTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_alignTop="@+id/textView12"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toEndOf="@+id/textView12"
+                    android:backgroundTint="@color/grey"
+                    android:ems="10"
+                    android:hint="ex: http://mywebsite.com"
+                    android:imeOptions="actionNext"
+                    android:inputType="textWebEditText"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#333"
+                    android:textCursorDrawable="@drawable/black_cursor"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="60dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView12"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:text="Bio"
+                    android:textColor="#333"
+                    android:textSize="12sp"/>
+
+                <EditText
+                    android:id="@+id/epBioTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_alignStart="@+id/epFullnameTxt"
+                    android:layout_alignTop="@+id/textView13"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/grey"
+                    android:ems="10"
+                    android:hint="Somehting about you"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:maxLength="80"
+                    android:textColor="#333"
+                    android:textCursorDrawable="@drawable/black_cursor"
+                    android:textSize="9sp"/>
+
+                <TextView
+                    android:id="@+id/epCharactersCountTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/epFullnameTxt"
+                    android:layout_below="@+id/epBioTxt"
+                    android:text="80"
+                    android:textSize="9sp"/>
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="60dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView13"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center_vertical"
+                    android:text="Email address"
+                    android:textColor="#333"
+                    android:textSize="9sp"/>
+
+                <EditText
+                    android:id="@+id/epEmailTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_alignTop="@+id/textView14"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toEndOf="@+id/textView14"
+                    android:backgroundTint="@color/grey"
+                    android:ems="10"
+                    android:hint="Your email address"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#333"
+                    android:textCursorDrawable="@drawable/black_cursor"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView9"
+                    android:layout_below="@+id/textView14"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Your email adress will never be displayed or shared on this app. It is mainly used for password recovery purpose."
+                    android:textSize="9sp"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

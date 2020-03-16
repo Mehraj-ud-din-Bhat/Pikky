@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/iplTextView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Interesting people"
+        android:textColor="#333"
+        android:textSize="11sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/iplFindPeopleButt"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/transparent"
+        android:text="Find people"
+        android:textAllCaps="false"
+        android:textColor="@color/main_color"
+        android:textSize="11sp"
+        android:textStyle="bold"/>
+
+
+    <HorizontalScrollView
+        android:id="@+id/iplIntPeopleScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/iplFindPeopleButt"
+        >
+
+        <LinearLayout
+            android:id="@+id/iplIntPeopleLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/iplNoPeopleTxt"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/iplFindPeopleButt"
+        android:gravity="center_vertical"
+        android:text="No Interesting people at the present"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:visibility="visible"/>
+</RelativeLayout>

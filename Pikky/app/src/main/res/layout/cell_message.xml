@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff">
+
+    <RelativeLayout
+        android:id="@+id/senderCell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/sDateTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:text="loading..."
+            android:textColor="#555"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:id="@+id/sMessTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sDateTxt"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/rounded_sender_cell"
+            android:fontFamily="sans-serif"
+            android:paddingBottom="5dp"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:text="loading..."
+            android:textColor="#333"
+            android:textSize="12sp"/>
+
+        <ImageView
+            android:id="@+id/sImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignEnd="@+id/sDateTxt"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/rounded_edittext"
+            android:scaleType="centerCrop"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/receiverCell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/rDateTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="loading..."
+            android:textColor="#555"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:id="@+id/rMessTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/rDateTxt"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/rounded_receiver_cell"
+            android:paddingBottom="5dp"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:text="loading..."
+            android:textAlignment="textStart"
+            android:textColor="#000"
+            android:textSize="12sp"
+            />
+
+        <ImageView
+            android:id="@+id/rImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/rounded_edittext"
+            android:scaleType="centerCrop"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

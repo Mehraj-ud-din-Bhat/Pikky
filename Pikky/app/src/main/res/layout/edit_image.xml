@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".Edit.EditImage">
+
+    <ImageView
+        android:id="@+id/eiOriginalImg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/eiTopView"
+        android:layout_centerHorizontal="true"
+        tools:ignore="ContentDescription" />
+
+    <RelativeLayout
+        android:id="@+id/eiTopView"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#fff">
+
+        <Button
+            android:id="@+id/eiBackButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back_butt" />
+
+        <Button
+            android:id="@+id/eiNextButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/next_butt" />
+
+        <TextView
+            android:id="@+id/eiTitleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Edit Image"
+            android:textColor="#333"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/eiBottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:background="#fff">
+
+        <HorizontalScrollView
+            android:id="@+id/filterScrollview"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:id="@+id/eiFiltersLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+    <jp.co.cyberagent.android.gpuimage.GPUImageView
+        android:id="@+id/eiGPUimage"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/eiTopView"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"></jp.co.cyberagent.android.gpuimage.GPUImageView>
+
+</RelativeLayout>

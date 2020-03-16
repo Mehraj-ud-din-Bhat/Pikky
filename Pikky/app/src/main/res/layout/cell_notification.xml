@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+    <com.daimajia.swipe.SwipeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cSwipeLayout">
+
+        <!-- Buttons View Start-->
+        <LinearLayout
+            android:background="@android:color/holo_red_light"
+            android:id="@+id/bottom_wrapper"
+            android:layout_width="80dp"
+            android:weightSum="1"
+            android:layout_height="match_parent">
+
+            <!-- BUTTONS SHOWN ON SWIPE -->
+            <Button
+                android:text="Delete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/cnotDeleteButt"
+                android:layout_weight="1"
+                android:textColor="#fff"
+                android:background="@android:color/holo_red_light" />
+
+        </LinearLayout>
+        <!-- Buttons View End-->
+
+
+        <!-- Surface View Start -->
+        <RelativeLayout
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/cnotCell">
+
+            <!-- VIEWS IN THE CELL -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cnotAvatarimg"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/default_avatar"/>
+
+            <TextView
+                android:id="@+id/cnotUsernameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/cnotAvatarimg"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toEndOf="@+id/cnotAvatarimg"
+                android:text="•••"
+                android:textColor="#333"
+                android:textSize="11sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/cnotDateTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/cnotUsernameTxt"
+                android:layout_below="@+id/cnotUsernameTxt"
+                android:layout_marginRight="10dp"
+                android:text="•••"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/cnotNotificationTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/cnotUsernameTxt"
+                android:layout_below="@+id/cnotDateTxt"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:text="•••"
+                android:textSize="11sp"/>
+
+            <ImageView
+                android:id="@+id/cnotVerifiedBadge"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignBottom="@+id/cnotAvatarimg"
+                android:layout_alignEnd="@+id/cnotAvatarimg"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/verified_badge"/>
+
+
+        </RelativeLayout>
+    </com.daimajia.swipe.SwipeLayout>
+
+
+
+
+
+</RelativeLayout>

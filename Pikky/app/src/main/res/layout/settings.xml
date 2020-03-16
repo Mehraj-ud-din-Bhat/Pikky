@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".setting.Settings">
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/settTitleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Settings"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="#cccccc"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/settBackButt"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back_butt"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/settScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/settContainerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/settResetPasswordButt"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="Reset Password"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignEnd="@+id/settResetPasswordButt"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/disclosure_indicator"/>
+
+                <Button
+                    android:id="@+id/settLikedPostsButt"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/settResetPasswordButt"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="Liked Posts"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignEnd="@+id/settResetPasswordButt"
+                    android:layout_alignTop="@+id/settLikedPostsButt"
+                    app:srcCompat="@drawable/disclosure_indicator"/>
+
+                <Button
+                    android:id="@+id/settBlockedUsersButt"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/settLikedPostsButt"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="Blocked Users"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignEnd="@+id/settResetPasswordButt"
+                    android:layout_alignTop="@+id/settBlockedUsersButt"
+                    app:srcCompat="@drawable/disclosure_indicator"/>
+
+                <Button
+                    android:id="@+id/settBookmarkedPostsButt"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/settBlockedUsersButt"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="Bookmarked Posts"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignEnd="@+id/settResetPasswordButt"
+                    android:layout_alignTop="@+id/settBookmarkedPostsButt"
+                    app:srcCompat="@drawable/disclosure_indicator"/>
+
+                <TextView
+                    android:id="@+id/settPushNotifTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_alignStart="@+id/settResetPasswordButt"
+                    android:layout_below="@+id/settBookmarkedPostsButt"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:text="Receive Push Notifications"
+                    android:textColor="#000"
+                    android:textSize="12sp"/>
+
+                <Switch
+                    android:id="@+id/settPushNotificationsSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/settResetPasswordButt"
+                    android:layout_below="@+id/settBookmarkedPostsButt"
+                    android:layout_marginTop="20dp"
+                    android:checked="true"
+                    android:thumbTint="@color/main_color"
+                    />
+
+                <Button
+                    android:id="@+id/settTOUButt"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/settPushNotifTxt"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="Terms of Use and Privacy Policy"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignEnd="@+id/settResetPasswordButt"
+                    android:layout_below="@+id/settPushNotificationsSwitch"
+                    android:layout_marginTop="17dp"
+                    app:srcCompat="@drawable/disclosure_indicator"/>
+
+                <Button
+                    android:id="@+id/settContactUsButt"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/settTOUButt"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="Contact Us"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignEnd="@+id/settResetPasswordButt"
+                    android:layout_alignTop="@+id/settContactUsButt"
+                    app:srcCompat="@drawable/disclosure_indicator"/>
+
+                <Button
+                    android:id="@+id/settEditProfileButt"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/settContactUsButt"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="Edit Profile"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/main_color"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignEnd="@+id/settResetPasswordButt"
+                    android:layout_alignTop="@+id/settEditProfileButt"
+                    app:srcCompat="@drawable/disclosure_indicator"/>
+
+                <Button
+                    android:id="@+id/settLogoutButt"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/settEditProfileButt"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="Log out"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignEnd="@+id/settResetPasswordButt"
+                    android:layout_alignTop="@+id/settLogoutButt"
+                    app:srcCompat="@drawable/disclosure_indicator"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

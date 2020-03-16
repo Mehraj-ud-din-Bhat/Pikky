@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">Pikky</string>
+
+    <!-- IMPORTANT: REPLACE THE STRINGS BELOW WITH YOUR OWN INTERSTITIAL UNIT ID & APP ID - GET THEM ON http://apps.admob.com -->
+    <string name="ADMOB_INTERSTITIAL_UNIT_ID">ca-app-pub-3940256099942544/10331737126</string>
+    <string name="ADMOB_APP_ID">ca-app-pub-3940256099942544~33475117136</string>
+
+
+    <!-- IMPORTANT: REPLACE THE STRING BELOW WITH YOUR OWN FACEBOOK APP ID YOU'LL GET ON https://developers.facebook.com/apps/ -->
+    <string name="facebook_app_id">228126361127891</string>
+
+
+</resources>
