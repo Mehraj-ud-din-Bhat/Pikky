@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context=".loginSignUp.SignUp">
+    tools:context=".loginSignUp.Activity.SignUp">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -29,30 +28,35 @@
                     android:id="@+id/signupDismissButt"
                     android:layout_width="44dp"
                     android:layout_height="44dp"
-                    android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/suTitleTxt"
+                    android:layout_alignParentTop="true"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/dismiss_butt_black"
                     android:textAlignment="textStart"
                     android:textAllCaps="false"
                     android:textColor="@color/main_color"
                     android:textSize="12sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/suTitleTxt"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/imageView2"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Sing up to AppName "
-                    android:textAlignment="center"
-                    android:textColor="#333"
+
+                <Button
+                    android:id="@+id/signUpButt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/outlinedTextuserPasswordsignup"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="29dp"
+                    android:background="@drawable/rounded1"
+                    android:backgroundTint="@color/main_color"
+                    android:text="Sign Up"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
                     android:textSize="14sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -63,129 +67,17 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/logo"/>
+                    android:src="@drawable/logo" />
 
-                <EditText
-                    android:id="@+id/usernameTxt2"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/suTitleTxt"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:backgroundTint="#f1f1f1"
-                    android:hint="USERNAME"
-                    android:imeOptions="actionNext"
-                    android:inputType="none"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textAlignment="textStart"
-                    android:textColor="#333"
-                    android:textCursorDrawable="@drawable/black_cursor"
-                    android:textSize="12sp"/>
-
-                <EditText
-                    android:id="@+id/passwordTxt2"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/usernameTxt2"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:backgroundTint="#f1f1f1"
-                    android:hint="PASSWORD"
-                    android:imeOptions="actionNext"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textAlignment="textStart"
-                    android:textColor="#333"
-                    android:textCursorDrawable="@drawable/black_cursor"
-                    android:textSize="12sp"/>
-
-                <EditText
-                    android:id="@+id/emailTxt2"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/passwordTxt2"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:backgroundTint="#f1f1f1"
-                    android:hint="EMAIL"
-                    android:imeOptions="actionNext"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textAlignment="textStart"
-                    android:textColor="#333"
-                    android:textCursorDrawable="@drawable/black_cursor"
-                    android:textSize="12sp"/>
-
-                <EditText
-                    android:id="@+id/fullnameTxt2"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/emailTxt2"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:backgroundTint="#f1f1f1"
-                    android:hint="FULL NAME "
-                    android:imeOptions="actionDone"
-                    android:inputType="textPersonName"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textAlignment="textStart"
-                    android:textColor="#333"
-                    android:textCursorDrawable="@drawable/black_cursor"
-                    android:textSize="12sp"/>
-
-                <Button
-                    android:id="@+id/signUpButt2"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/fullnameTxt2"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginTop="29dp"
-                    android:background="@drawable/rounded1"
-                    android:backgroundTint="@color/main_color"
-                    android:text="Sign Up"
-                    android:textAllCaps="false"
-                    android:textColor="#fff"
-                    android:textSize="14sp"
-                    android:textStyle="bold"/>
-
+                <!--                Sign up Fields Starts From here-->
+                <!--             User First Name Feild-->
                 <RelativeLayout
                     android:layout_width="200dp"
                     android:layout_height="38dp"
-                    android:layout_alignParentBottom="true"
                     android:layout_below="@+id/signUpButt2"
+                    android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp">
-
-                    <RadioButton
-                        android:id="@+id/supAgreeRadioButt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:buttonTint="#777"
-                        android:checked="false"/>
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentTop="true"
-                        android:layout_toEndOf="@+id/supAgreeRadioButt"
-                        android:gravity="center_vertical"
-                        android:text="Agree with our"
-                        android:textSize="10sp"/>
 
                     <Button
                         android:id="@+id/touButt"
@@ -200,12 +92,207 @@
                         android:textAllCaps="false"
                         android:textColor="@color/main_color"
                         android:textSize="10sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
+                    <RadioButton
+                        android:id="@+id/supAgreeRadioButt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:buttonTint="#777"
+                        android:checked="false" />
 
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/supAgreeRadioButt"
+                        android:gravity="center_vertical"
+                        android:text="Agree with our"
+                        android:textSize="10sp" />
 
 
                 </RelativeLayout>
+
+                <!--Last Name feild-->
+                <TextView
+                    android:id="@+id/suTitleTxt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Sing up to AppName "
+                    android:textAlignment="center"
+                    android:textColor="#333"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <!--                Phone Number Feild-->
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/outlinedTextUserFirstNamesignup"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/suTitleTxt"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_marginRight="25dp"
+                    android:focusableInTouchMode="true"
+                    android:hint="First Name"
+                    app:boxStrokeColor="@color/main_color"
+
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userFirstNamesingup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:imeOptions="actionNext"
+                        android:inputType="none"
+                        android:singleLine="true"
+                        android:textAlignment="textStart"
+                        android:textColor="#333"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--                Email id Field-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/outlinedTextuserLastNamesignup"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/outlinedTextUserFirstNamesignup"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_marginRight="25dp"
+
+                    android:hint="Last Name"
+                    app:boxStrokeColor="@color/main_color"
+
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userLastNamesingup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:imeOptions="actionNext"
+                        android:inputType="none"
+                        android:singleLine="true"
+                        android:textAlignment="textStart"
+                        android:textColor="#333"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--               password field-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/outlinedTextFieldPhoneNumbersignup"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/outlinedTextuserLastNamesignup"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_marginRight="25dp"
+
+                    android:hint="Phone Number"
+                    app:boxStrokeColor="@color/main_color"
+
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userPhoneNumbersingup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:maxLength="12"
+                        android:singleLine="true"
+                        android:textAlignment="textStart"
+                        android:textColor="#333"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!--         End Input Feilds For Sign up-->
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/outlinedTextFieldUserEmailIdsignup"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/outlinedTextFieldPhoneNumbersignup"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="25dp"
+
+                    android:hint="Email ID"
+                    app:boxStrokeColor="@color/main_color"
+
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userEmailIdtxtsingup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:imeOptions="actionNext"
+                        android:inputType="none"
+                        android:singleLine="true"
+                        android:textAlignment="textStart"
+                        android:textColor="#333"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/outlinedTextuserPasswordsignup"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/outlinedTextFieldUserEmailIdsignup"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_marginRight="25dp"
+
+                    android:hint="Set a Password"
+                    app:boxStrokeColor="@color/main_color"
+
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userPasswordsignup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:maxLength="40"
+                        android:singleLine="true"
+                        android:textAlignment="textStart"
+                        android:textColor="#333"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </RelativeLayout>
 

@@ -21,10 +21,8 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.preference.PreferenceManager;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -38,11 +36,16 @@ import com.parse.LogOutCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.RequestPasswordResetCallback;
-import com.xscoder.pikky.loginSignUp.Intro;
 import com.xscoder.pikky.Massiging.Notifications;
 import com.xscoder.pikky.R;
 import com.xscoder.pikky.Search.SearchScreen;
 import com.xscoder.pikky.Userprofile.EditProfile;
+import com.xscoder.pikky.loginSignUp.Activity.Intro;
+
+import java.util.Objects;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import static com.xscoder.pikky.Configurations.MAIN_COLOR;
 import static com.xscoder.pikky.Configurations.SUPPORT_EMAIL_ADDRESS;
@@ -53,8 +56,6 @@ import static com.xscoder.pikky.Configurations.osRegular;
 import static com.xscoder.pikky.Configurations.osSemibold;
 import static com.xscoder.pikky.Configurations.showHUD;
 import static com.xscoder.pikky.Configurations.simpleAlert;
-
-import java.util.Objects;
 
 public class Settings extends AppCompatActivity {
 

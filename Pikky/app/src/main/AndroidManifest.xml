@@ -96,18 +96,24 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"/>
+        <activity
+            android:name=".Home.Activities.Home"
+            android:windowSoftInputMode="adjustPan" />
 
-<!--        &lt;!&ndash; AdMob CLosed Ads by Mehraj;-->
+        <!--        &lt;!&ndash; AdMob CLosed Ads by Mehraj;-->
 <!--        <meta-data-->
 <!--            android:name="com.google.android.gms.ads.APPLICATION_ID"-->
 <!--            android:value="@string/ADMOB_APP_ID"/>-->
 
         <!-- Other Activities -->
-        <activity android:name=".Home.Home" android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".loginSignUp.Login"/>
-        <activity android:name=".loginSignUp.SignUp"/>
+        <activity android:name=".loginSignUp.Activity.Login" />
+        <activity android:name=".loginSignUp.Activity.SignUp" />
+        <activity android:name=".loginSignUp.Activity.Intro" />
         <activity android:name=".setting.TermsOfUse"/>
-        <activity android:name=".loginSignUp.Intro"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
         <activity android:name=".Share.ShareScreen"/>
         <activity android:name=".Camera.SquareCamera"/>
         <activity android:name=".Edit.EditImage"/>

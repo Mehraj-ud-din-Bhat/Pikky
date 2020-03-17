@@ -1,4 +1,4 @@
-package com.xscoder.pikky.loginSignUp;
+package com.xscoder.pikky.loginSignUp.Activity;
 
 /*==================================================
  Pikky
@@ -17,16 +17,12 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.parse.ParseException;
@@ -37,19 +33,9 @@ import com.xscoder.pikky.loginSignUp.Operations.LogIn;
 
 import java.util.Objects;
 
-import API.API;
-import API.API_URLS;
-import ModalClasses.LoginResponse;
-import ModalClasses.UserProfile;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.xscoder.pikky.Configurations.hideHUD;
 import static com.xscoder.pikky.Configurations.osBold;
 import static com.xscoder.pikky.Configurations.osRegular;
 import static com.xscoder.pikky.Configurations.osSemibold;

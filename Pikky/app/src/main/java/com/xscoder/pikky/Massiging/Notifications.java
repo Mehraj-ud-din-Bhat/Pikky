@@ -18,11 +18,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -45,11 +40,11 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.xscoder.pikky.Userprofile.Account;
-import com.xscoder.pikky.Home.Home;
+import com.xscoder.pikky.Camera.SquareCamera;
+import com.xscoder.pikky.Home.Activities.Home;
 import com.xscoder.pikky.R;
 import com.xscoder.pikky.Search.SearchScreen;
-import com.xscoder.pikky.Camera.SquareCamera;
+import com.xscoder.pikky.Userprofile.Account;
 import com.xscoder.pikky.Userprofile.UserProfile;
 
 import java.util.ArrayList;
@@ -57,6 +52,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import static com.xscoder.pikky.Configurations.NOTIFICATIONS_CLASS_NAME;
 import static com.xscoder.pikky.Configurations.NOTIFICATIONS_CREATED_AT;
@@ -78,8 +80,6 @@ import static com.xscoder.pikky.Configurations.osRegular;
 import static com.xscoder.pikky.Configurations.showHUD;
 import static com.xscoder.pikky.Configurations.simpleAlert;
 import static com.xscoder.pikky.Configurations.timeAgoSinceDate;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Notifications extends AppCompatActivity {
 

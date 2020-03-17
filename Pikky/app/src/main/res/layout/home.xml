@@ -1,16 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
-    tools:context=".Home.Home">
+    tools:context=".Home.Activities.Home">
+
+    <!-- TOP Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tabBar"
+        android:layout_below="@+id/topBar"
+        android:orientation="vertical">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/colorPrimary">
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
 
-    <!-- Top Bar -->
+            android:background="@color/colorPrimary"
+            android:minHeight="10dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:tabIndicatorColor="@color/dark"
+            app:tabIndicatorHeight="1dp"
+
+
+            app:tabTextColor="@android:color/black"></com.google.android.material.tabs.TabLayout>
+
+
+    </LinearLayout>
+    <!--    End TOP BAr-->
+
+
+    <!--    Fragment Section / Tablayout Starts -->
+    <LinearLayout
+        android:id="@+id/tabBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/tab_one"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/tab_home_active"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:layout_marginRight="10dp"
+            android:textSize="8dp" />
+
+        <Button
+            android:id="@+id/tab_two"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/pots_outlined"
+            android:backgroundTint="#555"
+            android:paddingTop="30dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp" />
+
+        <Button
+            android:id="@+id/tab_three"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/tab_camera"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp" />
+
+        <Button
+            android:id="@+id/tab_four"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/tab_notifications"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp" />
+
+        <Button
+
+            android:id="@+id/tab_five"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/tab_account"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555"
+            android:textSize="8dp" />
+
+    </LinearLayout>
+
+
+    <!--    End Fragement Section-->
+
+
+    <!-- Bottom Navigation Bar -->
     <RelativeLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -19,285 +135,53 @@
         android:layout_alignParentTop="true"
         android:background="#fff">
 
-        <TextView
-            android:id="@+id/hTitleTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="Pikky"
-            android:textColor="#000"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/search_butt_homeac"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
 
-        <LinearLayout
-            android:id="@+id/line"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:background="#cccccc"
-            android:orientation="horizontal">
-        </LinearLayout>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/tab_search"
+            android:backgroundTint="#555"
+            android:paddingTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="#555" />
+
 
         <Button
             android:id="@+id/hInstantsButt"
             android:layout_width="44dp"
             android:layout_height="44dp"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/instant_butt"/>
-    </RelativeLayout>
+            android:background="@drawable/instant_butt" />
 
-
-    <!-- Tab Bar -->
-    <LinearLayout
-        android:id="@+id/tabBar"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/tab_one"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/tab_home_active"
-            android:backgroundTint="#555"
-            android:paddingTop="35dp"
-            android:textAllCaps="false"
-            android:textSize="8dp"/>
-
-        <Button
-            android:id="@+id/tab_two"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/tab_search"
-            android:backgroundTint="#555"
-            android:paddingTop="35dp"
-            android:textAllCaps="false"
-            android:textColor="#555"
-            android:textSize="8dp"/>
-
-        <Button
-            android:id="@+id/tab_three"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/tab_camera"
-            android:backgroundTint="#555"
-            android:paddingTop="35dp"
-            android:textAllCaps="false"
-            android:textColor="#555"
-            android:textSize="8dp"/>
-
-        <Button
-            android:id="@+id/tab_four"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/tab_notifications"
-            android:backgroundTint="#555"
-            android:paddingTop="35dp"
-            android:textAllCaps="false"
-            android:textColor="#555"
-            android:textSize="8dp"/>
-
-        <Button
-            android:id="@+id/tab_five"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/tab_account"
-            android:backgroundTint="#555"
-            android:paddingTop="35dp"
-            android:textAllCaps="false"
-            android:textColor="#555"
-            android:textSize="8dp"/>
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/hMomentsView"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/topBar"
-        android:background="@color/light_grey">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:text="Moments"
-            android:textColor="#333"
-            android:textSize="12sp"
-            android:textStyle="bold"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/hYourMomentImg"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_below="@+id/textView2"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/default_avatar"
-            app:civ_border_color="#999"
-            app:civ_border_width="2dp"/>
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/hYourMomentImg"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:text="You"
-            android:textAlignment="center"
-            android:textSize="11sp"/>
-
-        <ImageView
-            android:id="@+id/hPlusIcon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignBottom="@+id/hYourMomentImg"
-            android:layout_alignEnd="@+id/hYourMomentImg"
-            ads:srcCompat="@drawable/plus_icon"/>
-
-        <HorizontalScrollView
-            android:id="@+id/hMomentsScrollView"
-            android:layout_width="280dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="80dp"
-            android:scrollbarSize="1dp">
-
-            <LinearLayout
-                android:id="@+id/hMomentsLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-            </LinearLayout>
-        </HorizontalScrollView>
-
-    </RelativeLayout>
-
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/refreshControl"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/tabBar"
-        android:layout_below="@+id/hMomentsView">
-
-        <ListView
-            android:id="@+id/hPostsListView"
+        <LinearLayout
+            android:id="@+id/line"
             android:layout_width="match_parent"
-            android:layout_height="289dp"
-            android:layout_above="@+id/tabBar"
+            android:layout_height="1dp"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/hMomentsView"
-            android:divider="@android:color/transparent"
-            android:descendantFocusability="beforeDescendants"
-            android:dividerHeight="30dp"/>
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    <RelativeLayout
-        android:id="@+id/hNoPostsLayout"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/hMomentsView"
-        android:layout_marginTop="20dp"
-        android:background="#fff"
-        android:visibility="visible">
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:scaleType="centerCrop"
-            ads:srcCompat="@drawable/logo"/>
+            android:layout_alignParentBottom="true"
+            android:background="#cccccc"
+            android:orientation="horizontal"></LinearLayout>
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/hTitleTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView4"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:text="Welcome to Pikky"
-            android:textAlignment="center"
-            android:textColor="#333"
-            android:textStyle="bold"/>
+            android:layout_centerInParent="true"
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView5"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="Here you'll see posts from you and the people you follow."
-            android:textSize="12sp"/>
-
+            android:fontFamily="@font/montserrat"
+            android:text="Pikky"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RelativeLayout>
+    <!--End Top Bar-->
 
-    <RelativeLayout
-        android:id="@+id/hVideoContainerLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="640dp"
-        android:background="#85000000">
-
-        <com.xscoder.pikky.Edit.TextureVideoView
-            android:id="@+id/hVideoView"
-            android:layout_width="match_parent"
-            android:layout_height="320dp"
-            android:layout_below="@+id/hDismissVideoLayoutButt"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"/>
-
-
-        <ProgressBar
-            android:id="@+id/hVideoProgressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:indeterminateTint="#fff"/>
-
-        <Button
-            android:id="@+id/hDismissVideoLayoutButt"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/dismiss_butt"/>
-    </RelativeLayout>
 
 </RelativeLayout>

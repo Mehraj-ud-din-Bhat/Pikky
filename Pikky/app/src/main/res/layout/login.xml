@@ -5,7 +5,7 @@
     android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginSignUp.Login"
+    tools:context=".loginSignUp.Activity.Login"
     android:focusableInTouchMode="true"
     android:background="#fff">
 

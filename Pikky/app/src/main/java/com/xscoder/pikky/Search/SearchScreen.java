@@ -17,11 +17,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -48,11 +43,11 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.xscoder.pikky.Camera.SquareCamera;
 import com.xscoder.pikky.Configurations;
-import com.xscoder.pikky.Home.Home;
+import com.xscoder.pikky.Home.Activities.Home;
 import com.xscoder.pikky.Massiging.Notifications;
 import com.xscoder.pikky.R;
-import com.xscoder.pikky.Camera.SquareCamera;
 import com.xscoder.pikky.Userprofile.Account;
 import com.xscoder.pikky.posts.PostDetails;
 
@@ -60,6 +55,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static com.xscoder.pikky.Configurations.POSTS_BOOKMARKED_BY;
 import static com.xscoder.pikky.Configurations.POSTS_CLASS_NAME;

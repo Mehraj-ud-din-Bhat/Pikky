@@ -13,14 +13,15 @@ package com.xscoder.pikky.Splash;
 ==================================================*/
 
 import android.content.Intent;
-import android.os.Handler;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.xscoder.pikky.Home.Home;
+import com.xscoder.pikky.Home.Activities.Home;
 import com.xscoder.pikky.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
 

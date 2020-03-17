@@ -1,4 +1,4 @@
-package com.xscoder.pikky.loginSignUp;
+package com.xscoder.pikky.loginSignUp.Activity;
 
 /*==================================================
      Pikky
@@ -20,7 +20,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -35,11 +34,11 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
-import com.parse.facebook.ParseFacebookUtils;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
-import com.xscoder.pikky.Home.Home;
+import com.parse.facebook.ParseFacebookUtils;
+import com.xscoder.pikky.Home.Activities.Home;
 import com.xscoder.pikky.R;
 
 import org.json.JSONException;
@@ -56,6 +55,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import static com.xscoder.pikky.Configurations.TAG;
 import static com.xscoder.pikky.Configurations.USER_AVATAR;

@@ -1,4 +1,4 @@
-package ModalClasses;
+package com.xscoder.pikky.loginSignUp.ModalClasses;
 
 public class LoginResponse {
     private int status;

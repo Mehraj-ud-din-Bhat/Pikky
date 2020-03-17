@@ -1,20 +1,21 @@
 package com.xscoder.pikky.loginSignUp.Operations;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.xscoder.pikky.Home.Activities.Home;
+import com.xscoder.pikky.loginSignUp.ModalClasses.LoginResponse;
+import com.xscoder.pikky.loginSignUp.ModalClasses.UserProfile;
 
+import API.API;
 import API.RetrofitClient;
-import API.API_URLS;
-import ModalClasses.LoginResponse;
-import ModalClasses.UserProfile;
 import retrofit2.Call;
 import retrofit2.Callback;
-import API.API;
 import retrofit2.Response;
-
-import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.xscoder.pikky.Configurations.hideHUD;
 import static com.xscoder.pikky.Configurations.simpleAlert;
@@ -107,6 +108,11 @@ public class LogIn {
         {
             UserProfile userProfile=new UserProfile();
             userProfile=response.getUserProfile();
+            SharedPreferences sp = myContext.getSharedPreferences("userProfile", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("registered", 1);
+            editor.commit();
+            myContext.startActivity(new Intent(myContext, Home.class));
             simpleAlert("Registered USER: "+response.getMessage(),myContext);
 
         }
