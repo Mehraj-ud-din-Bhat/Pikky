@@ -27,44 +27,29 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
-import com.parse.FindCallback;
-import com.parse.ParseException;
 import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
 import com.squareup.picasso.Picasso;
 import com.xscoder.pikky.Camera.SquareCamera;
 import com.xscoder.pikky.Home.Activities.Home;
-import com.xscoder.pikky.Home.Fragments.PagerAdapter;
-import com.xscoder.pikky.Massiging.Follow;
 import com.xscoder.pikky.Massiging.Notifications;
 import com.xscoder.pikky.R;
 import com.xscoder.pikky.Search.SearchScreen;
 import com.xscoder.pikky.Userprofile.AccountProfile.Fragments.AccountProfilePagerAdapter;
+import com.xscoder.pikky.Userprofile.EditProfile;
 import com.xscoder.pikky.loginSignUp.Activity.Intro;
 import com.xscoder.pikky.loginSignUp.ModalClasses.LoginResponse;
-import com.xscoder.pikky.posts.PostDetails;
 import com.xscoder.pikky.setting.Settings;
 
 import java.util.ArrayList;
@@ -80,30 +65,11 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static com.xscoder.pikky.Configurations.FOLLOW_CLASS_NAME;
-import static com.xscoder.pikky.Configurations.FOLLOW_CURRENT_USER;
-import static com.xscoder.pikky.Configurations.FOLLOW_IS_FOLLOWING;
 import static com.xscoder.pikky.Configurations.MULTIPLE_PERMISSIONS;
-import static com.xscoder.pikky.Configurations.POSTS_CLASS_NAME;
-import static com.xscoder.pikky.Configurations.POSTS_CREATED_AT;
-import static com.xscoder.pikky.Configurations.POSTS_IMAGE;
-import static com.xscoder.pikky.Configurations.POSTS_USER_POINTER;
-import static com.xscoder.pikky.Configurations.POSTS_VIDEO;
 import static com.xscoder.pikky.Configurations.TAG;
-import static com.xscoder.pikky.Configurations.USER_AVATAR;
-import static com.xscoder.pikky.Configurations.USER_BIO;
-import static com.xscoder.pikky.Configurations.USER_FULLNAME;
-import static com.xscoder.pikky.Configurations.USER_IS_VERIFIED;
-import static com.xscoder.pikky.Configurations.USER_USERNAME;
-import static com.xscoder.pikky.Configurations.USER_WEBSITE;
-import static com.xscoder.pikky.Configurations.getParseImage;
-import static com.xscoder.pikky.Configurations.hideHUD;
-import static com.xscoder.pikky.Configurations.osBold;
 import static com.xscoder.pikky.Configurations.osRegular;
 import static com.xscoder.pikky.Configurations.permissions;
-import static com.xscoder.pikky.Configurations.roundLargeNumber;
-import static com.xscoder.pikky.Configurations.showHUD;
-import static com.xscoder.pikky.Configurations.simpleAlert;
+
 
 public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
 
@@ -126,7 +92,9 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
     int screenW, screenH;
 
     LoginResponse userDetail;
-
+    // Code by Mehraj
+    TabLayout tabLayout;
+    ViewPager viewPager;
 
     //-----------------------------------------------
     // MARK - ON START
@@ -176,6 +144,10 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
     }
 
 
+    // ------------------------------------------------
+    // MARK: - QUERY FOLLOWERS & FOLLOWING PEOPLE
+    // ------------------------------------------------
+
     //-----------------------------------------------
     // MARK - ON CREATE
     //-----------------------------------------------
@@ -212,10 +184,12 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
         avatarImg = findViewById(R.id.accAvatarImg);
         fullnameTxt = findViewById(R.id.accFullNameTxt);
         verifiedBadge = findViewById(R.id.accVerifiedBadge);
-        initTabLayout();
+
         //fullnameTxt.setTypeface(R.font.montserrat);
         usernameTxt = findViewById(R.id.accUsernameTxt);
         usernameTxt.setTypeface(osRegular);
+        initTabLayout();
+        editProfileButton();
 
 
         //-----------------------------------------------
@@ -283,7 +257,6 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
     }// ./ onCreate
 
-
     // ------------------------------------------------
     // MARK: - SHOW USER'S DETAILS
     // ------------------------------------------------
@@ -294,24 +267,16 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
         //@mehraj
         try {
             Picasso.get().load(API_URLS.BASE_URL + "/" + userDetail.getUserProfile().getEmail_id() + ".png").placeholder(R.drawable.default_avatar).error(R.drawable.default_avatar).into(avatarImg);
-
-
             //   Toast.makeText(this,"USER"+userDetail.getUserProfile().getHiquik_id()+ userDetail.getUserProfile().getFirst_name(),Toast.LENGTH_LONG).show();
             fullnameTxt.setText(userDetail.getUserProfile().getFirst_name() + " " + userDetail.getUserProfile().getLast_name());
-            //  usernameTxt.setText("@"+userDetail.getUserProfile().getHiquik_id());
-            verifiedBadge.setVisibility(View.VISIBLE);
+            usernameTxt.setText("@" + userDetail.getUserProfile().getHiquik_id());
+            //    verifiedBadge.setVisibility(View.VISIBLE);
         } catch (Exception e) {
 
         }
 
 
     }
-
-
-    // ------------------------------------------------
-    // MARK: - QUERY FOLLOWERS & FOLLOWING PEOPLE
-    // ------------------------------------------------
-
 
     //-----------------------------------------------
     // MARK - REFRESH DATA
@@ -322,7 +287,6 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
         //queryPosts();
         //if (refreshControl.isRefreshing()) { refreshControl.setRefreshing(false); }
     }
-
 
     //-----------------------------------------------
     // MARK - CHECK FOR PERMISSIONS
@@ -361,20 +325,14 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
         }
     }
 
-    // Code by Mehraj
-    TabLayout tabLayout;
-    ViewPager viewPager;
-
     void initTabLayout() {
         tabLayout = (TabLayout) findViewById(R.id.tabLayout_account);
         viewPager = (ViewPager) findViewById(R.id.viewPager_account);
-
-
         tabLayout.addTab(tabLayout.newTab().setText("About"));
         tabLayout.addTab(tabLayout.newTab().setText("Fallowing"));
         tabLayout.addTab(tabLayout.newTab().setText("Media"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        roundCorner();
+        roundCornerCoverImage();
 
         final AccountProfilePagerAdapter myadapter = new AccountProfilePagerAdapter(this, getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(myadapter);
@@ -402,7 +360,7 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
     }
 
-    void roundCorner() {
+    void roundCornerCoverImage() {
         ImageView img = findViewById(R.id.profile_cover_img);
 
         Bitmap mbitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.cover)).getBitmap();
@@ -417,11 +375,24 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
         android.view.ViewGroup.LayoutParams layoutParams = img.getLayoutParams();
         layoutParams.width = Resources.getSystem().getDisplayMetrics().widthPixels;
-        ;
+
         // will be changed when image will be loaded from server
         // layoutParams.height = 80;
         img.setLayoutParams(layoutParams);
+    }
 
+
+    void editProfileButton() {
+        TextView btn_edit_profile = findViewById(R.id.profile_edit_btn_tv);
+        try {
+            btn_edit_profile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(Account.this, EditProfile.class));
+                }
+            });
+        } catch (Exception e) {
+        }
 
     }
 }// ./end

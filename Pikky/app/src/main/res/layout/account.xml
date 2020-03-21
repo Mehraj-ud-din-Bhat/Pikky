@@ -1,199 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="false">
 
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_account"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_above="@+id/nestedScrollview_account">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
-
-            <RelativeLayout
-                android:id="@+id/topBar"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:background="#fff">
-
-                <TextView
-                    android:id="@+id/accTitleTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:text="Account"
-                    android:textColor="#000"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-
-                <Button
-                    android:id="@+id/accSettingsButt"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/settings_butt" />
-
-                <Button
-                    android:id="@+id/accBackButt"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/back_butt"
-                    android:visibility="invisible" />
-
-                <LinearLayout
-                    android:id="@+id/line"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:background="#cccccc"
-                    android:orientation="horizontal"></LinearLayout>
-            </RelativeLayout>
-
-            <!--        profile section-->
-            <RelativeLayout
-
-                android:id="@+id/profile_view_frameL"
-                android:layout_below="@+id/topBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:id="@+id/profile_cover_img"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_alignParentTop="true"
-                    android:src="@drawable/cover"></ImageView>
-
-                <ImageView
-                    android:id="@+id/profile_pencil_edit"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="163dp"
-                    android:layout_marginEnd="30dp"
-                    android:src="@drawable/pencil_edit"></ImageView>
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/accAvatarImg"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_below="@+id/profile_cover_img"
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-85dp"
-                    app:civ_border_color="@android:color/white"
-                    app:civ_border_width="3dp"
-                    android:src="@drawable/default_avatar" />
-
-
-                <ImageView
-                    android:id="@+id/accVerifiedBadge"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignEnd="@+id/accAvatarImg"
-                    android:layout_alignBottom="@+id/accAvatarImg"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="7dp"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/verified_badge" />
-
-                <TextView
-                    android:id="@+id/accFullNameTxt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/accVerifiedBadge"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_centerInParent="true"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:textSize="20sp"
-                    android:text="•••"
-                    android:textColor="#333" />
-
-                <TextView
-                    android:id="@+id/accUsernameTxt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/accFullNameTxt"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:paddingLeft="55dp"
-                    android:paddingRight="55dp"
-                    android:text="🏅Do you have a website that fits his mobile? Does your website have all the features for better conversion of your consumer on the mobile platform?🏅"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="28dp"
-                    android:background="@drawable/cover_image_bg"
-                    android:fontFamily="@font/montserrat"
-                    android:padding="7dp"
-                    android:text="Edit Profile"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12sp" />
-
-                <!--End Profile Section-->
-
-                <!--    Fragments-->
-            </RelativeLayout>
-        </RelativeLayout>
-
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollview_account"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:background="#fff"
         android:layout_below="@+id/app_bar_account"
+        android:background="#fff"
+        android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="#fff">
+            android:background="#fff"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_above="@+id/tabBar"
                 android:orientation="vertical">
-
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabLayout_account"
                     android:layout_width="match_parent"
@@ -203,8 +35,7 @@
                     app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
                     app:tabIndicatorColor="@color/main_color"
                     app:tabIndicatorFullWidth="false"
-                    app:tabIndicatorHeight="1dp"
-
+                    app:tabIndicatorHeight="0dp"
                     app:tabSelectedTextColor="@color/main_color"
                     app:tabTextColor="@android:color/black"></com.google.android.material.tabs.TabLayout>
 
@@ -212,9 +43,9 @@
                     android:id="@+id/viewPager_account"
                     android:layout_width="match_parent"
                     android:layout_height="fill_parent"
-                    android:background="#fff"
-                    android:layout_marginBottom="50dp"
                     android:layout_below="@id/tabLayout_account"
+
+                    android:background="#fff"
 
                     ></androidx.viewpager.widget.ViewPager>
             </LinearLayout>
@@ -297,6 +128,184 @@
         </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nestedScrollview_account">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+            <RelativeLayout
+                android:id="@+id/topBar"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#fff">
+
+                <Button
+                    android:id="@+id/accSettingsButt"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/settings_butt" />
+
+
+                <Button
+                    android:id="@+id/accBackButt"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back_butt"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="#cccccc"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <TextView
+                    android:id="@+id/accTitleTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Account"
+                    android:textColor="#000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <!--        profile section-->
+            <RelativeLayout
+
+                android:id="@+id/profile_view_frameL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topBar">
+
+
+                <ImageView
+                    android:id="@+id/profile_cover_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/cover"></ImageView>
+
+                <ImageView
+                    android:id="@+id/profile_pencil_edit"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="163dp"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/pencil_edit"></ImageView>
+
+                <ImageView
+                    android:id="@+id/accVerifiedBadge"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignEnd="@+id/accAvatarImg"
+                    android:layout_alignBottom="@+id/accAvatarImg"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/verified_badge" />
+
+
+                <TextView
+                    android:id="@+id/accFullNameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/accVerifiedBadge"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center"
+                    android:text="••••••"
+                    android:textColor="#333"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/accUsernameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/accFullNameTxt"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="•••"
+                    android:textColor="@color/main_color"
+                    android:textSize="8sp"></TextView>
+
+                <TextView
+                    android:id="@+id/tv_short_bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/accUsernameTxt"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:paddingLeft="55dp"
+                    android:paddingRight="55dp"
+                    android:text="🏅Do you have a website that fits his mobile? Does your website have all the features for better conversion of your consumer on the mobile platform?🏅"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/profile_edit_btn_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="28dp"
+                    android:background="@drawable/cover_image_bg"
+                    android:fontFamily="@font/montserrat"
+                    android:padding="7dp"
+                    android:text="Edit Profile"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/accAvatarImg"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/profile_cover_img"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-85dp"
+                    android:src="@drawable/default_avatar"
+                    app:civ_border_color="@android:color/white"
+                    app:civ_border_width="3dp" />
+
+                <!--End Profile Section-->
+
+                <!--    Fragments-->
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

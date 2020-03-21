@@ -1,14 +1,538 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context=".Userprofile.AccountProfile.Fragments.About">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="About Section" />
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
 
-</FrameLayout>
+            <!-- card about section Part 1-->
+           <androidx.cardview.widget.CardView
+               android:id="@+id/card_account_basic_info"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="20dp"
+               android:background="#ffff"
+               card_view:cardCornerRadius="3dp"
+               card_view:cardElevation="2dp"
+               card_view:cardUseCompatPadding="true"
+               android:layout_margin="1dp">
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:orientation="vertical"
+                   android:layout_height="wrap_content"
+
+                   >
+
+<!--                  Prosession City Port Folio-->
+                   <LinearLayout
+                       android:id="@+id/account_profession_container"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                       android:layout_margin="5dp">
+                       <ImageView
+                           android:id="@+id/account_profession_icon"
+                           android:layout_width="20dp"
+                           android:layout_height="20dp"
+                           android:src="@drawable/verified_badge"></ImageView>
+                       <TextView
+                           android:id="@+id/account_profession_text"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="My Profession"
+                           android:layout_gravity="center_vertical"
+                           android:layout_marginLeft="13dp"
+                           android:textSize="13sp"
+                           android:padding="3dp"
+                           >
+
+                       </TextView>
+
+                   </LinearLayout>
+                   <LinearLayout
+                       android:id="@+id/account_city_container"
+                       android:layout_width="match_parent"
+                       android:fontFamily="@font/montserrat"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                       android:layout_margin="5dp">
+                       <ImageView
+                           android:id="@+id/account_city_icon"
+                           android:layout_width="20dp"
+                           android:layout_height="20dp"
+                           android:src="@drawable/verified_badge"></ImageView>
+                       <TextView
+                           android:id="@+id/account_city_text"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="My City Name"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_gravity="center_vertical"
+                           android:layout_marginLeft="13dp"
+                           android:textSize="13sp"
+                           android:padding="3dp">
+
+                       </TextView>
+
+                   </LinearLayout>
+                   <LinearLayout
+                       android:id="@+id/account_portfolioLink_container"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                       android:orientation="horizontal">
+                       <ImageView
+                           android:id="@+id/account_portfolioLink_icon"
+                           android:layout_width="20dp"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_height="20dp"
+                           android:src="@drawable/verified_badge"></ImageView>
+                       <TextView
+                           android:id="@+id/account_portfolioLink_text"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="My PortFolio Link"
+                           android:layout_gravity="center_vertical"
+                           android:textSize="13sp"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_marginLeft="13dp"
+                           android:padding="3dp">
+
+                       </TextView>
+
+                   </LinearLayout>
+
+<!--                 Skills Intrestes-->
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+
+                       android:gravity="center">
+                       <TextView
+
+                           android:layout_marginLeft="0dp"
+                           android:layout_marginRight="20dp"
+                           android:layout_marginTop="10dp"
+                           android:padding="6dp"
+                           android:layout_marginBottom="5dp"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Skill/intrest2"
+                           android:background="@drawable/skill_text_bg"
+                           android:textSize="9sp"
+                           >
+
+
+                       </TextView>
+                       <TextView
+                           android:layout_marginLeft="5dp"
+                           android:layout_marginRight="5dp"
+                           android:layout_marginTop="10dp"
+                           android:layout_marginBottom="5dp"
+                           android:padding="6dp"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Skill/intrest3"
+                           android:background="@drawable/skill_text_bg"
+                           android:textSize="9sp"
+                           >
+
+
+                       </TextView>
+                       <TextView
+                           android:layout_marginLeft="5dp"
+                           android:layout_marginRight="5dp"
+                           android:layout_marginTop="10dp"
+                           android:padding="6dp"
+                           android:layout_marginBottom="5dp"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Skill/intrest3"
+                           android:background="@drawable/skill_text_bg"
+                           android:textSize="9sp"
+                           >
+
+
+                       </TextView>
+                       <TextView
+                           android:layout_marginLeft="20dp"
+                           android:layout_marginRight="10dp"
+                           android:layout_marginTop="10dp"
+                           android:layout_marginBottom="5dp"
+                           android:padding="6dp"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Skill/intrest4"
+                           android:background="@drawable/skill_text_bg"
+                           android:textSize="9sp"
+                           >
+
+
+                       </TextView>
+
+                   </LinearLayout>
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+
+                       android:gravity="center">
+                       <TextView
+
+                           android:layout_marginLeft="0dp"
+                           android:layout_marginRight="20dp"
+                           android:layout_marginTop="10dp"
+                           android:padding="6dp"
+                           android:layout_marginBottom="5dp"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Skill/intrest2"
+                           android:background="@drawable/skill_text_bg"
+                           android:textSize="9sp"
+                           >
+
+
+                       </TextView>
+                       <TextView
+                           android:layout_marginLeft="5dp"
+                           android:layout_marginRight="5dp"
+                           android:layout_marginTop="10dp"
+                           android:layout_marginBottom="5dp"
+                           android:padding="6dp"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Skill/intrest3"
+                           android:background="@drawable/skill_text_bg"
+                           android:textSize="9sp"
+                           >
+
+
+                       </TextView>
+                       <TextView
+                           android:layout_marginLeft="5dp"
+                           android:layout_marginRight="5dp"
+                           android:layout_marginTop="10dp"
+                           android:padding="6dp"
+                           android:layout_marginBottom="5dp"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Skill/intrest3"
+                           android:background="@drawable/skill_text_bg"
+                           android:textSize="9sp"
+                           >
+
+
+                       </TextView>
+                       <TextView
+                           android:layout_marginLeft="20dp"
+                           android:layout_marginRight="10dp"
+                           android:layout_marginTop="10dp"
+                           android:layout_marginBottom="5dp"
+                           android:padding="6dp"
+                           android:fontFamily="@font/montserrat"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Skill/intrest4"
+                           android:background="@drawable/skill_text_bg"
+                           android:textSize="9sp"
+                           >
+
+
+                       </TextView>
+
+                   </LinearLayout>
+<!--           other Social Media-->
+                   <TextView
+                       android:layout_marginTop="10dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Other Social Media"
+                       android:textSize="12dp"
+                       android:fontFamily="@font/montserrat"
+
+                       >
+                   </TextView>
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="0.5dp"
+                       android:layout_marginTop="1dp"
+                       android:background="@android:color/darker_gray" />
+                   <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:padding="10dp"
+                      android:layout_marginBottom="5dp">
+                      <LinearLayout
+                          android:layout_marginTop="8dp"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:padding="6dp"
+                          android:background="@color/main_color">
+                          <ImageView
+                              android:layout_width="30dp"
+                              android:layout_height="30dp"
+                              android:src="@drawable/facebook_icon">
+                          </ImageView>
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Facebook"
+                              android:textColor="@android:color/white"
+                              ></TextView>
+
+
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_marginTop="8dp"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:padding="6dp"
+                          android:background="@color/main_color">
+                          <ImageView
+                              android:layout_width="30dp"
+                              android:layout_height="30dp"
+                              android:src="@drawable/facebook_icon">
+                          </ImageView>
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Instagram"
+                              android:textColor="@android:color/white"
+                              ></TextView>
+
+
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_marginTop="8dp"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:padding="6dp"
+                          android:background="@color/main_color">
+                          <ImageView
+                              android:layout_width="30dp"
+                              android:layout_height="30dp"
+                              android:src="@drawable/facebook_icon">
+                          </ImageView>
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Twitter     "
+                              android:textColor="@android:color/white"
+                              ></TextView>
+
+
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_marginTop="8dp"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:padding="6dp"
+                          android:background="@color/main_color">
+                          <ImageView
+                              android:layout_width="30dp"
+                              android:layout_height="30dp"
+                              android:src="@drawable/facebook_icon">
+                          </ImageView>
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="dribble       "
+                              android:textColor="@android:color/white"
+                              ></TextView>
+
+
+                      </LinearLayout>
+
+
+                  </LinearLayout>
+                   </LinearLayout>
+
+
+           </androidx.cardview.widget.CardView>
+
+<!--           Badges  card-->
+
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="20dp"
+               android:background="#ffff"
+               android:layout_below="@+id/card_account_basic_info"
+               card_view:cardCornerRadius="3dp"
+               card_view:cardElevation="2dp"
+               card_view:cardUseCompatPadding="true"
+               android:layout_margin="1dp">
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:gravity="center"
+
+                   >
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Badges"
+                       android:textSize="12sp"
+                       android:gravity="center"
+                       android:fontFamily="@font/montserrat"
+                       >
+
+                   </TextView>
+                   <GridLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:columnCount="4"
+                       android:rowCount="2"
+                      
+                       >
+                       <de.hdodenhof.circleimageview.CircleImageView
+
+
+                           android:layout_marginTop="0dp"
+
+                           android:layout_marginBottom="5dp"
+                           android:layout_width="60dp"
+                           android:layout_height="60dp"
+                           card_view:civ_border_color="@color/main_color"
+                           android:src="@drawable/facebook_icon"
+
+                           >
+
+
+                       </de.hdodenhof.circleimageview.CircleImageView>
+                       <de.hdodenhof.circleimageview.CircleImageView
+
+
+                           android:layout_marginTop="0dp"
+
+                           android:layout_marginBottom="5dp"
+                           android:layout_width="60dp"
+                           android:layout_height="60dp"
+                           card_view:civ_border_color="@color/main_color"
+                           android:src="@drawable/facebook_icon"></de.hdodenhof.circleimageview.CircleImageView>
+                       <de.hdodenhof.circleimageview.CircleImageView
+
+
+                           android:layout_marginTop="0dp"
+
+                           android:layout_marginBottom="5dp"
+                           android:layout_width="60dp"
+                           android:layout_height="60dp"
+                           card_view:civ_border_color="@color/main_color"
+                           android:src="@drawable/facebook_icon"
+
+                           >
+
+
+                       </de.hdodenhof.circleimageview.CircleImageView>
+                       <de.hdodenhof.circleimageview.CircleImageView
+
+
+                           android:layout_marginTop="0dp"
+
+                           android:layout_marginBottom="5dp"
+                           android:layout_width="60dp"
+                           android:layout_height="60dp"
+                           card_view:civ_border_color="@color/main_color"
+                           android:src="@drawable/facebook_icon"></de.hdodenhof.circleimageview.CircleImageView>
+                       <de.hdodenhof.circleimageview.CircleImageView
+
+
+                           android:layout_marginTop="0dp"
+
+                           android:layout_marginBottom="5dp"
+                           android:layout_width="60dp"
+                           android:layout_height="60dp"
+                           card_view:civ_border_color="@color/main_color"
+                           android:src="@drawable/facebook_icon"
+
+                           >
+
+
+                       </de.hdodenhof.circleimageview.CircleImageView>
+                       <de.hdodenhof.circleimageview.CircleImageView
+
+
+                           android:layout_marginTop="0dp"
+
+                           android:layout_marginBottom="5dp"
+                           android:layout_width="60dp"
+                           android:layout_height="60dp"
+                           card_view:civ_border_color="@color/main_color"
+                           android:src="@drawable/facebook_icon"></de.hdodenhof.circleimageview.CircleImageView>
+                       <de.hdodenhof.circleimageview.CircleImageView
+
+
+                           android:layout_marginTop="0dp"
+
+                           android:layout_marginBottom="5dp"
+                           android:layout_width="60dp"
+                           android:layout_height="60dp"
+                           card_view:civ_border_color="@color/main_color"
+                           android:src="@drawable/facebook_icon"
+
+                           >
+
+
+                       </de.hdodenhof.circleimageview.CircleImageView>
+                       <de.hdodenhof.circleimageview.CircleImageView
+
+
+                           android:layout_marginTop="0dp"
+
+                           android:layout_marginBottom="5dp"
+                           android:layout_width="60dp"
+                           android:layout_height="60dp"
+                           card_view:civ_border_color="@color/main_color"
+                           android:src="@drawable/facebook_icon"></de.hdodenhof.circleimageview.CircleImageView>
+
+
+
+
+
+                   </GridLayout>
+
+
+
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+
+
+
+       </RelativeLayout>
+
+
+
+   </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
