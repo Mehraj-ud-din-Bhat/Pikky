@@ -15,22 +15,37 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Base64;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
+
 import com.xscoder.pikky.R;
 import com.xscoder.pikky.loginSignUp.ModalClasses.PasswordValidator;
 import com.xscoder.pikky.setting.TermsOfUse;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import static com.xscoder.pikky.Configurations.osBold;
@@ -45,8 +60,8 @@ public class SignUp extends AppCompatActivity {
     EditText userFirstNameTxt, userLastNameTxt, userPhoneNumberTxt, userEmailTxt, userPasswordTxt;
     RadioButton agreeRadioButt;
     TextInputLayout textInputLayoutUserFirstName, textInputLayoutUserLastName, textInputLayoutUserPhoneNumber, textInputLayoutUserEmail, textInputLayoutUserPassword;
-
-
+    ImageView profileImage;
+    Uri uri;
     //-----------------------------------------------
     // MARK - ON CREATE
     //-----------------------------------------------
@@ -67,6 +82,7 @@ public class SignUp extends AppCompatActivity {
         userPhoneNumberTxt = findViewById(R.id.userPhoneNumbersingup);
         userEmailTxt = findViewById(R.id.userEmailIdtxtsingup);
         userPasswordTxt = findViewById(R.id.userPasswordsignup);
+        profileImage = findViewById(R.id.profile_imageView_signup);
 
         userFirstNameTxt.setTypeface(osRegular);
         userLastNameTxt.setTypeface(osRegular);
@@ -86,11 +102,35 @@ public class SignUp extends AppCompatActivity {
         agreeRadioButt = findViewById(R.id.supAgreeRadioButt);
         agreeRadioButt.setChecked(false);
 
-
         // Get App name
         TextView titleTxt = findViewById(R.id.suTitleTxt);
         titleTxt.setTypeface(osSemibold);
         titleTxt.setText("Sign up to " + getString(R.string.app_name));
+
+        //-----------------------------------------------
+        // Profile Image Click Handler
+        //-----------------------------------------------
+
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    CropImage.activity()
+                            .setGuidelines(CropImageView.Guidelines.ON)
+                            .start(SignUp.this);
+                } catch (Exception e) {
+
+                }
+
+
+            }
+        });
+
+
+        //-----------------------------------------------
+        // End  Image Click Handler Code and profile picket
+        //-----------------------------------------------
+
 
 
         //-----------------------------------------------
@@ -156,7 +196,15 @@ public class SignUp extends AppCompatActivity {
 
 
                                 if (agreeRadioButt.isChecked()) {
+                                    // Everything is correct proceed with image conevrsion
                                     removeErrorMessgae();
+                                    try {
+                                        doSignUp(userFirstNameTxt.getText().toString(), userLastNameTxt.getText().toString(), userEmailTxt.getText().toString()
+                                                , userPhoneNumberTxt.getText().toString(), userPasswordTxt.getText().toString(), "jsjjs");
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+
                                     showHUD(SignUp.this);
                                     dismissKeyboard();
 
@@ -381,6 +429,63 @@ public class SignUp extends AppCompatActivity {
             return false;
         return pat.matcher(email).matches();
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        //  super.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CropImage.PICK_IMAGE_CHOOSER_REQUEST_CODE) {
+            // Make sure the request was successful
+            if (resultCode == RESULT_OK) {
+                Uri imageUri = CropImage.getPickImageResultUri(this, data);
+                if (CropImage.isReadExternalStoragePermissionsRequired(this, imageUri)) {
+                    this.uri = imageUri;
+
+                    // requestPermissions(new String[]{Manifest.permission.C2D_MESSAGE});
+                }
+
+
+                CropImage.activity(imageUri).start(this);
+            }
+        }
+
+        //Crop result
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+                uri = result.getUri();
+                profileImage.setImageURI(uri);
+
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                Exception error = result.getError();
+            }
+        }
+    }
+
+
+    void doSignUp(String userFname, String userLname, String userEmail, String userPhone, String userPassword, String userProfileBase64) throws IOException {
+        com.xscoder.pikky.loginSignUp.Operations.SignUp signUp = new com.xscoder.pikky.loginSignUp.Operations.SignUp(this);
+        signUp.doSignUp(userFname, userLname, userEmail, userPhone, userPassword, convertImageToStringForServer(uri));
+
+    }
+
+
+// Image Converter
+
+    public String convertImageToStringForServer(Uri imageBitmap) throws IOException {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        if (imageBitmap != null) {
+            Bitmap image = ((BitmapDrawable) profileImage.getDrawable()).getBitmap();
+            image.compress(Bitmap.CompressFormat.JPEG, 60, stream);
+            byte[] byteArray = stream.toByteArray();
+            return Base64.encodeToString(byteArray, Base64.DEFAULT);
+        } else {
+            return null;
+        }
+    }
+
     //End Code by Mehraj
 
 

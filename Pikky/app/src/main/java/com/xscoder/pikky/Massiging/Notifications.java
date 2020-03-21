@@ -44,7 +44,7 @@ import com.xscoder.pikky.Camera.SquareCamera;
 import com.xscoder.pikky.Home.Activities.Home;
 import com.xscoder.pikky.R;
 import com.xscoder.pikky.Search.SearchScreen;
-import com.xscoder.pikky.Userprofile.Account;
+import com.xscoder.pikky.Userprofile.AccountProfile.Account;
 import com.xscoder.pikky.Userprofile.UserProfile;
 
 import java.util.ArrayList;

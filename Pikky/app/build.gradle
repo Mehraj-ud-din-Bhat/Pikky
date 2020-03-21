@@ -73,16 +73,16 @@ dependencies {
     // Retrofit dependancy and gson for API AND JSON RESPONSE ADDED BY MEHRAJ 10:29 14 MARCH 2020
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-
-
-
-
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
     //noinspection GradleCompatible
     implementation 'com.android.support:design:28.0.0'
 
 
-
- //   implementation 'com.google.android.material:material:1.1.0'
+    // implementation 'com.google.android.material:material:1.1.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

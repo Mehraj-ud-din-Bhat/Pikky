@@ -46,7 +46,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.xscoder.pikky.R;
-import com.xscoder.pikky.Userprofile.Account;
+import com.xscoder.pikky.Userprofile.AccountProfile.Account;
 import com.xscoder.pikky.Userprofile.UserProfile;
 
 import java.util.ArrayList;

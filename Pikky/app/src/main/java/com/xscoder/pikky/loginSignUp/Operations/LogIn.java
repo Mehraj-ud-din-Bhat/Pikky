@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.gson.Gson;
 import com.xscoder.pikky.Home.Activities.Home;
 import com.xscoder.pikky.loginSignUp.ModalClasses.LoginResponse;
 import com.xscoder.pikky.loginSignUp.ModalClasses.UserProfile;
@@ -25,7 +26,7 @@ public class LogIn {
     private Context myContext;
     private String userEmail;
     private String userPassword;
-   private TextInputLayout textInputLayoutUserName,textInputLayoutPassword;
+    private TextInputLayout textInputLayoutUserName, textInputLayoutPassword;
 
     public LogIn() {
     }
@@ -106,12 +107,15 @@ public class LogIn {
     {
         if(response.isUserExists() && response.isPasswordMatch())
         {
-            UserProfile userProfile=new UserProfile();
-            userProfile=response.getUserProfile();
-            SharedPreferences sp = myContext.getSharedPreferences("userProfile", Activity.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sp.edit();
-            editor.putInt("registered", 1);
-            editor.commit();
+            //Put Data in Session or Shared Preference
+            SharedPreferences sp = myContext.getSharedPreferences("LoginResponse", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor prefsEditor = sp.edit();
+            Gson gson = new Gson();
+            String json = gson.toJson(response);
+            prefsEditor.putString("LoginResponse", json);
+            prefsEditor.commit();
+            //   makeToast(response.getUserProfile().getFirst_name());
+
             myContext.startActivity(new Intent(myContext, Home.class));
             simpleAlert("Registered USER: "+response.getMessage(),myContext);
 

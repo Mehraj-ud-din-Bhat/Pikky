@@ -39,6 +39,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.gson.Gson;
 import com.parse.FindCallback;
 import com.parse.FunctionCallback;
 import com.parse.GetCallback;
@@ -55,9 +56,10 @@ import com.xscoder.pikky.Home.Fragments.PagerAdapter;
 import com.xscoder.pikky.Massiging.Notifications;
 import com.xscoder.pikky.R;
 import com.xscoder.pikky.Search.SearchScreen;
-import com.xscoder.pikky.Userprofile.Account;
+import com.xscoder.pikky.Userprofile.AccountProfile.Account;
 import com.xscoder.pikky.Userprofile.UserProfile;
 import com.xscoder.pikky.loginSignUp.Activity.Intro;
+import com.xscoder.pikky.loginSignUp.ModalClasses.LoginResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -1116,16 +1118,29 @@ public class Home extends AppCompatActivity implements SwipeRefreshLayout.OnRefr
         // MARK - CURRENT USER NOT LOGGED IN!
         //-----------------------------------------------
 
-        SharedPreferences sp = getSharedPreferences("userProfile", Activity.MODE_PRIVATE);
-        int myIntValue = sp.getInt("registered", -1);
-        if (myIntValue != 1) {
+        SharedPreferences sp = getSharedPreferences("LoginResponse", Activity.MODE_PRIVATE);
+
+        Gson gson = new Gson();
+        String json = sp.getString("LoginResponse", "");
+        LoginResponse LogIn = gson.fromJson(json, LoginResponse.class);
+        if (LogIn != null) {
+            if (!(LogIn.isUserExists())) {
+                startActivity(new Intent(ctx, Intro.class));
+                this.finish();
+                //-----------------------------------------------
+                // MARK - CURRENT USER IS LOGGED IN
+                //-----------------------------------------------
+            } else {
+
+                //   Toast.makeText(this,"HI"+LogIn.getUserProfile().getFirst_name(),Toast.LENGTH_LONG).show();
+            }
+        } else {
+
             startActivity(new Intent(ctx, Intro.class));
             this.finish();
+        }
 
-            //-----------------------------------------------
-            // MARK - CURRENT USER IS LOGGED IN
-            //-----------------------------------------------
-        } else {
+        {
 
 //            ParseUser currentUser = ParseUser.getCurrentUser();
 //
@@ -1203,7 +1218,7 @@ public class Home extends AppCompatActivity implements SwipeRefreshLayout.OnRefr
         Button searchButt = findViewById(R.id.search_butt_homeac);
         instantButt = findViewById(R.id.hInstantsButt);
 
-        searchButt.setOnClickListener(new View.OnClickListener() {
+        tab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ctx, SearchScreen.class));

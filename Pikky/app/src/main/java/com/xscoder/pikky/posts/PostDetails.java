@@ -51,7 +51,7 @@ import com.xscoder.pikky.R;
 import com.xscoder.pikky.Search.SearchScreen;
 import com.xscoder.pikky.Share.ShareScreen;
 import com.xscoder.pikky.Edit.TextureVideoView;
-import com.xscoder.pikky.Userprofile.Account;
+import com.xscoder.pikky.Userprofile.AccountProfile.Account;
 import com.xscoder.pikky.Userprofile.UserProfile;
 import com.xscoder.pikky.comments.Comments;
 

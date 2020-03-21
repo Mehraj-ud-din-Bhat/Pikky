@@ -15,17 +15,11 @@
         android:layout_below="@+id/topBar"
         android:orientation="vertical">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:background="@color/colorPrimary">
 
-        </androidx.viewpager.widget.ViewPager>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
 
@@ -37,6 +31,15 @@
 
 
             app:tabTextColor="@android:color/black"></com.google.android.material.tabs.TabLayout>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/colorPrimary">
+
+        </androidx.viewpager.widget.ViewPager>
 
 
     </LinearLayout>

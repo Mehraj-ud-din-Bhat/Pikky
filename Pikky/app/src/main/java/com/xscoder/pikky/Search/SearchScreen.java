@@ -48,7 +48,7 @@ import com.xscoder.pikky.Configurations;
 import com.xscoder.pikky.Home.Activities.Home;
 import com.xscoder.pikky.Massiging.Notifications;
 import com.xscoder.pikky.R;
-import com.xscoder.pikky.Userprofile.Account;
+import com.xscoder.pikky.Userprofile.AccountProfile.Account;
 import com.xscoder.pikky.posts.PostDetails;
 
 import java.util.ArrayList;

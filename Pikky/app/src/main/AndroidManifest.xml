@@ -54,7 +54,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
+        <!--        Crop Image Activity @mehraj-->
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
 
         <!-- IMPORTANT: Replace "191162618244" with your own GCM Sender Id. -->
         <meta-data
@@ -118,7 +121,7 @@
         <activity android:name=".Camera.SquareCamera"/>
         <activity android:name=".Edit.EditImage"/>
         <activity android:name=".Edit.EditVideo"/>
-        <activity android:name=".Userprofile.Account"/>
+        <activity android:name=".Userprofile.AccountProfile.Account" />
         <activity android:name=".Search.SearchScreen"/>
         <activity android:name=".Userprofile.UserProfile"/>
         <activity android:name=".comments.Comments"/>
